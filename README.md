@@ -59,3 +59,7 @@ interpreter, for example `texlua` from TeX Live:
 echo 'assert(loadfile(arg[1])) print("OK")' > /tmp/luacheck.lua
 texlua /tmp/luacheck.lua lecture-shortcuts/main.lua
 ```
+
+## License
+
+MIT, see [LICENSE](LICENSE).
