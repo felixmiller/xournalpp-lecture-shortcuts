@@ -4,6 +4,9 @@
 -- WARNING: Plain-key accelerators (without Ctrl/Alt/Shift) will intercept
 -- keypresses in the Text tool.
 --
+-- Do not use H, J, K, L or digits: Xournal++ uses H/J/K/L for page navigation
+-- (in presentation mode they switch slides) and 1-9, 0 for the toolbar colors.
+--
 -- Bindings:
 --   P  = Pen (freehand)
 --   E  = Eraser
@@ -12,7 +15,8 @@
 --   B  = Box (rectangle) — press P to go back to freehand
 --   A  = Arrow — press P to go back to freehand
 --   D  = Double arrow — press P to go back to freehand
---   L  = Laser pointer (strokes fade out), press P to go back to the pen
+--   M  = Highlighter (marker), press P to go back to the pen
+--   X  = Laser pointer (strokes fade out), press P to go back to the pen
 --   Z  = Undo
 --   Y  = Redo
 
@@ -24,7 +28,8 @@ function initUi()
     app.registerUi({["menu"] = "Box (rectangle)", ["callback"] = "selectBox", ["accelerator"] = "b"})
     app.registerUi({["menu"] = "Arrow", ["callback"] = "selectArrow", ["accelerator"] = "a"})
     app.registerUi({["menu"] = "Double Arrow", ["callback"] = "selectDoubleArrow", ["accelerator"] = "d"})
-    app.registerUi({["menu"] = "Laser Pointer", ["callback"] = "selectLaser", ["accelerator"] = "l"})
+    app.registerUi({["menu"] = "Highlighter", ["callback"] = "selectHighlighter", ["accelerator"] = "m"})
+    app.registerUi({["menu"] = "Laser Pointer", ["callback"] = "selectLaser", ["accelerator"] = "x"})
     app.registerUi({["menu"] = "Undo", ["callback"] = "doUndo", ["accelerator"] = "z"})
     app.registerUi({["menu"] = "Redo", ["callback"] = "doRedo", ["accelerator"] = "y"})
 end
@@ -62,6 +67,10 @@ end
 function selectDoubleArrow()
     app.uiAction({["action"] = "ACTION_TOOL_PEN"})
     app.uiAction({["action"] = "ACTION_TOOL_DRAW_DOUBLE_ARROW", ["enabled"] = true})
+end
+
+function selectHighlighter()
+    app.uiAction({["action"] = "ACTION_TOOL_HIGHLIGHTER"})
 end
 
 function selectLaser()

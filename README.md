@@ -14,14 +14,20 @@ writing on slides with a pen during lectures.
 | B | Box (rectangle) |
 | A | Arrow |
 | D | Double arrow |
-| L | Laser pointer, strokes fade out (Xournal++ 1.3 or newer) |
+| M | Highlighter (marker) |
+| X | Laser pointer, strokes fade out (Xournal++ 1.3 or newer) |
 | Z | Undo |
 | Y | Redo |
 
-After R, S, B, A, D or L, press P to get back to the freehand pen.
+After R, S, B, A, D, M or X, press P to get back to the freehand pen.
 
 The keys are plain letters without Ctrl/Alt, so they also fire while typing
 with the Text tool.
+
+H, J, K and L are not available: Xournal++ uses them for vim-style page
+navigation, and in presentation mode they switch slides before the plugin sees
+them. Digits 1-9 and 0 are taken too, they select the first ten colors of the
+toolbar.
 
 ## Installation
 
